@@ -17,9 +17,9 @@ def nyc_pigeon_organizer(data)
   end
   
   data.each do |type, hash|
-    new_hash.each do |names, type|
+    new_hash.each do |names, kind|
       hash.each do |attribute, name|
-        if name.include?(names)
+        if name.include? names
           new_hash[names][type] << attribute.to_s
         end
       end
@@ -27,14 +27,4 @@ def nyc_pigeon_organizer(data)
   end
   
   new_hash
-  
-  +  data.each do |attribute, details_hash|
-+    organized_hash.each do |quality, data|
-+      details_hash.each do |key, value|
-+        if value.include? quality
-+          organized_hash[quality][attribute] << key.to_s
-+        end
-+      end
-+    end
-+  end
 end
