@@ -21,7 +21,7 @@ def nyc_pigeon_organizer(data)
       hash.each do |attribute, name|
         name.each do |the_name|
           if the_name == names
-            new_hash[names][kind] << attribute.to_s
+            new_hash[names][type] << attribute.to_s
           end
         end
       end
