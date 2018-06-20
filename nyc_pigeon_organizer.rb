@@ -1,13 +1,5 @@
 def nyc_pigeon_organizer(data)
 
-+  seven_pigeons.each do |name|
-+    organized_hash[name] = {}
-+  end
-+  data.each do |attribute, details_hash|
-+    organized_hash.each do |quality, data|
-+      organized_hash[quality][attribute] = []
-+    end
-+  end
 +  data.each do |attribute, details_hash|
 +    organized_hash.each do |quality, data|
 +      details_hash.each do |key, value|
@@ -17,7 +9,6 @@ def nyc_pigeon_organizer(data)
 +      end
 +    end
 +  end
-+  organized_hash
 new_hash = {}
 
 all_names = data.map do |types, hash|
@@ -26,8 +17,16 @@ end
 all_names = all_names.flatten.uniq
 
 all_names.each do |name|
-
+  new_hash[name] = {}
 end
+
+data.each do |type, hash|
+  new_hash.each do |name, info|
+    new_hash[name][type] = []
+  end
+end
+
+
 
 
 
