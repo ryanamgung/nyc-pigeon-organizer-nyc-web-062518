@@ -25,10 +25,16 @@ def nyc_pigeon_organizer(data)
       new_hash[name][type] = []
     end
   end
-
   
-
-
-
-
+  data.each do |type, hash|
+    hash.each do |attribute, name|
+      new_hash.each do |names, type|
+        if names == name
+          new_hash[type] = attribute.to_s
+        end
+      end
+    end
+  end
+  
+  new_hash
 end
