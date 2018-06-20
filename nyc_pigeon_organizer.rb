@@ -19,8 +19,10 @@ def nyc_pigeon_organizer(data)
   data.each do |type, hash|
     new_hash.each do |names, kind|
       hash.each do |attribute, name|
-        if name == names
-          new_hash[names][type] << attribute.to_s
+        name.each do |the_name|
+          if the_name == names
+            new_hash[names][type] << attribute.to_s
+          end
         end
       end
     end
