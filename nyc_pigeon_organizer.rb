@@ -24,4 +24,14 @@ def nyc_pigeon_organizer(data)
       end
     end
   end
+  
+  data[:lives].each do |hash|
+    hash.each do |location, names|
+      new_hash.each do |name, hash|
+        if names == name
+          new_hash[name][:lives] = [location]
+        end
+      end
+    end
+  end
 end
