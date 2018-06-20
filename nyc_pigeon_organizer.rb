@@ -1,4 +1,15 @@
 def nyc_pigeon_organizer(data)
+
++  data.each do |attribute, details_hash|
++    organized_hash.each do |quality, data|
++      details_hash.each do |key, value|
++        if value.include? quality
++          organized_hash[quality][attribute] << key.to_s
++        end
++      end
++    end
++  end
+
   new_hash = {}
   
   all_names = data.map do |types, hash|
@@ -19,7 +30,7 @@ def nyc_pigeon_organizer(data)
   data.each do |type, hash|
     hash.each do |attribute, name|
       new_hash.each do |names, type|
-        if names == name
+        if name.include?(names)
           new_hash[type] = attribute.to_s
         end
       end
