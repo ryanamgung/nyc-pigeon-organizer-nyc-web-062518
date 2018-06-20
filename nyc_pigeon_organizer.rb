@@ -6,5 +6,12 @@ def nyc_pigeon_organizer(data)
   end
   
   data[:color].each do |hash|
+    hash.each do |color, names|
+      new_hash.each do |name, hash|
+        if names == name
+          new_hash[name][:color] = color
+        end
+      end
+    end
   end
 end
